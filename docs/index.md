@@ -143,7 +143,7 @@
 
 <br/><br/>
 
-# 🚀 Achievements & Improvements Experience
+# 🚀 Achievements · Improvements Experience
 
 <h3> 1. 참여한 프로젝트 내 본인의 주요 역할과 결과, 이를 통해 본인의 역량이 향상된 경험 </h3>
 
