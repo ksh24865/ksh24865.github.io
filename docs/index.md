@@ -1,3 +1,4 @@
+# 김성호
 안녕하세요. 백엔드 엔지니어 김성호 입니다.
 
 <br/><br/>
@@ -117,7 +118,7 @@
   <p><strong>What did I do.</strong></p>
   <ul>
     <li>센서 데이터를 스트리밍 하기 위한 Kafka 세팅</li>
-    <li>데이터를 전처리하고 Elastic search에 적재하는 서버 구현</li>
+    <li>데이터를 전처리하고 Elastic search, MySQL에 적재하는 서버 구현</li>
   </ul>
   
   <p><strong>Tech Stack.</strong><br/>Kafka, ElasticSearch, Go, MySQL, Docker</p>
