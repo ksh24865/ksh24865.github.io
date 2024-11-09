@@ -74,7 +74,7 @@
   <p><strong>What did I do.</strong></p>
   <ul>
     <li>Oauth, API key, Crawling 등의 방법으로 유저로 부터 권한을 제공 받는 서비스 구현</li>
-    <li>인증 정보를 암호화된 storage에 저장</li>
+    <li>인증 정보를 암호화 후 저장</li>ㅎ
     <li>인증 정보 만료 시 대응 로직 구현</li>
   </ul>
   
