@@ -96,6 +96,7 @@
 </div>
 
 <hr/>
+
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
 <div style="flex: 1;">
@@ -108,7 +109,8 @@
   
   <p><strong>Description.</strong><br/>
   IOT 센서 클러스터들이 제공하는 다양한 데이터를 처리하는 ETL 파이프라인을 구축하였습니다.
-  
+  </p>
+
   <p><strong>What did I do.</strong></p>
   <ul>
     <li>센서 데이터를 스트리밍 하기 위한 Kafka 세팅</li>
@@ -116,7 +118,9 @@
   </ul>
   
   <p><strong>Tech Stack.</strong><br/>Kafka, ElasticSearch, Go, MySQL, Docker</p>
+</div>
 
+</div>
 
 
 <br/><br/>
