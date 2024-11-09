@@ -119,6 +119,8 @@
 
 </div>
 
+---
+
 # 🎒 Personal Experience
 
 ## 숭실대학교
