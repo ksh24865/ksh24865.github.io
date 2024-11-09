@@ -116,9 +116,7 @@
   </ul>
   
   <p><strong>Tech Stack.</strong><br/>Kafka, ElasticSearch, Go, MySQL, Docker</p>
-</div>
 
-</div>
 
 
 <br/><br/>
