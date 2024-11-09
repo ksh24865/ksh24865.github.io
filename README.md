@@ -94,12 +94,11 @@
 </div>
 
 ---
-
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
- 
+
 <div style="flex: 1;">
-  <h2>NC Lab(숭실대학교)</h2>
-  <p><strong>학부 연구생</strong><br>2020.07 - 2021.06</p>
+  <h2>Laplace Technologies, Inc.</h2>
+  <p><strong>Backend Engineer</strong><br>2021.06 - </p>
 </div>
 
 <div style="flex: 3;">
@@ -119,7 +118,6 @@
 
 </div>
 
----
 
 # 🎒 Personal Experience
 
