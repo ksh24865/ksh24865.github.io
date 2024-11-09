@@ -28,8 +28,9 @@
   </ul>
   
   <p><strong>Tech Stack.</strong><br/>Airflow, Spark, Trino, Iceberg, Deltalake, AwsS3, Kubernetes, Python, Java</p>
+  
+  <hr/>
 
-  <br/>
   <h3>대시보드 API 서버 구축</h3>
   
   <p><strong>Description.</strong><br/>
@@ -45,7 +46,8 @@
   
   <p><strong>Tech Stack.</strong><br/>FastAPI, Trino, Redis, Kubernetes, Python</p>
 
-  <br/>
+  <hr/>
+
   <h3>서드파티 권한 인증 서버 구축</h3>
   
   <p><strong>Description.</strong><br/>
@@ -61,7 +63,8 @@
   
   <p><strong>Tech Stack.</strong><br/>FastAPI, MySQL, AwsSecretManager, Kubernetes, Python</p>
 
-  <br/>
+  <hr/>
+
   <h3>알림 시스템 구축</h3>
   
   <p><strong>Description.</strong><br/>
@@ -77,7 +80,8 @@
   
   <p><strong>Tech Stack.</strong><br/>AwsSQS, Airflow, FastAPI, MySQL, Redis, Kubernetes, Python</p>
 
-  <br/>
+  <hr/>
+
   <h3>유지보수 및 모니터링</h3>
   
   <p><strong>Description.</strong><br/>
