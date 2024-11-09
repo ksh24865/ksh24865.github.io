@@ -98,7 +98,7 @@
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
  
 <div style="flex: 1;">
-  <h2>NC Lab <br> <span style="font-size: 15px; color: gray;"> 숭실대학교</h2>
+  <h2>NC Lab(숭실대학교)</h2>
   <p><strong>학부 연구생</strong><br>2020.07 - 2021.06</p>
 </div>
 
