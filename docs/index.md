@@ -1,9 +1,9 @@
-# 김성호
-안녕하세요. 백엔드 엔지니어 김성호 입니다.
+<h1>김성호</h1>
+<p>안녕하세요. 백엔드 엔지니어 김성호 입니다.</p>
 
 <br/><br/>
 
-# 💻 Work Experience.
+<h1>💻 Work Experience</h1>
 
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
@@ -128,18 +128,17 @@
 
 <br/><br/>
 
-# 🎒 Personal Experience
+<h1> 🎒 Personal Experience </h1>
 
-### 숭실대학교
+<h3> 숭실대학교 </h3>
 
-**AI 융합학부생 (2017.03 ~ 2022.06)**
-- 평균 학점: 4.1/4.5
+<p><strong>AI 융합학부생 (2017.03 ~ 2022.06)</strong></p>
+<p>- 평균 학점: 4.1/4.5</p>
+<p><strong>NCLab 학부 연구생 (2020.07 ~ 2021.06)</strong></p>
+<hr/>
 
-**NCLab 학부 연구생 (2020.07 ~ 2021.06)**
-
-### 해군 1함대 사령부 정보통신 중대
-
-**전산 · 네트워크병 (2017.08 ~ 2019.06)**
+<h3> 해군 1함대 사령부 정보통신 중대 </h3>
+<p><strong>전산 · 네트워크병 (2017.08 ~ 2019.06)</strong></p>
 
 <br/><br/>
 
