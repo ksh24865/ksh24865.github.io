@@ -1,20 +1,22 @@
 # 김성호
 안녕하세요 백엔드 엔지니어 김성호 입니다.
 
+<br/><br/>
+
 # 💻 Work Experience.
 
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
 <div style="flex: 1;">
   <h2>Laplace Technologies, Inc.</h2>
-  <p><strong>Backend Engineer</strong><br>2021.06 - </p>
+  <p><strong>Backend Engineer</strong><br/>2021.06 - </p>
 </div>
 
 <div style="flex: 3;">
   <h3>커머스 데이터 파이프라인 구축</h3>
   
-  <p><strong>Description.</strong><br>
-  <br>
+  <p><strong>Description.</strong><br/>
+  <br/>
   400개 이상의 고객사를 대상으로 쇼핑몰, 광고 플랫폼, 웹로그 등의 커머스 관련 데이터를 처리하는 ETL 파이프라인을 구축하여 일 평균 200만 개의 데이터를 처리 하였습니다.
   </p>
   
@@ -25,12 +27,12 @@
     <li>데이터 품질 및 쿼리 성능 향상을 위한 데이터 웨어하우스 구축</li>
   </ul>
   
-  <p><strong>Tech Stack.</strong><br>Airflow, Spark, Trino, Iceberg, Deltalake, AwsS3, Kubernetes, Python, Java</p>
+  <p><strong>Tech Stack.</strong><br/>Airflow, Spark, Trino, Iceberg, Deltalake, AwsS3, Kubernetes, Python, Java</p>
 
-  <br>
+  <br/>
   <h3>대시보드 API 서버 구축</h3>
   
-  <p><strong>Description.</strong><br>
+  <p><strong>Description.</strong><br/>
   500개 이상의 커머스 BI 데이터 지표에 대해 분석 및 시각화 하는 대시보드 API 서버를 설계 및 구축 하였습니다.
   </p>
   
@@ -41,12 +43,12 @@
     <li>대시보드를 커스텀하게 다룰 수 있도록 document 기반의 CRUD 기능 구현</li>
   </ul>
   
-  <p><strong>Tech Stack.</strong><br>FastAPI, Trino, Redis, Kubernetes, Python</p>
+  <p><strong>Tech Stack.</strong><br/>FastAPI, Trino, Redis, Kubernetes, Python</p>
 
-  <br>
+  <br/>
   <h3>서드파티 권한 인증 서버 구축</h3>
   
-  <p><strong>Description.</strong><br>
+  <p><strong>Description.</strong><br/>
   쇼핑, 광고, 웹로그를 다루는 외부 플랫폼의 데이터를 수집하기 위해 권한 및 인증 정보를 제공 받는 서버를 구축 하였습니다.  
   </p>
   
@@ -57,12 +59,12 @@
     <li>인증 정보 만료 시 대응 로직 구현</li>
   </ul>
   
-  <p><strong>Tech Stack.</strong><br>FastAPI, MySQL, AwsSecretManager, Kubernetes, Python</p>
+  <p><strong>Tech Stack.</strong><br/>FastAPI, MySQL, AwsSecretManager, Kubernetes, Python</p>
 
-  <br>
+  <br/>
   <h3>알림 시스템 구축</h3>
   
-  <p><strong>Description.</strong><br>
+  <p><strong>Description.</strong><br/>
   일 평균 1300개 이상의 커머스 BI 리포트 및 CRM 메시지를 발송하는 알림 시스템을 구축 하였습니다. 
   </p>
   
@@ -73,12 +75,12 @@
     <li>카카오 알림톡, 슬랙, 이메일 전송 서비스 구현</li>
   </ul>
   
-  <p><strong>Tech Stack.</strong><br>AwsSQS, Airflow, FastAPI, MySQL, Redis, Kubernetes, Python</p>
+  <p><strong>Tech Stack.</strong><br/>AwsSQS, Airflow, FastAPI, MySQL, Redis, Kubernetes, Python</p>
 
-  <br>
+  <br/>
   <h3>유지보수 및 모니터링</h3>
   
-  <p><strong>Description.</strong><br>
+  <p><strong>Description.</strong><br/>
   개발 경험 향상을 위해 배포 파이프라인 및 모니터링 시스템을 구축 하였습니다.
   </p>
   
@@ -88,23 +90,23 @@
     <li>PagerDuty 및 Sentry 기반의 에러 모니터링 시스템 구축, API 서버와 1만개 이상의 Airflow task의 Failure를 모니터링</li>
   </ul>
   
-  <p><strong>Tech Stack.</strong><br>GitAction, ArgoCD, Helm, Kubernetes, PagerDuty, Sentry</p>
+  <p><strong>Tech Stack.</strong><br/>GitAction, ArgoCD, Helm, Kubernetes, PagerDuty, Sentry</p>
 </div>
 
 </div>
 
----
+<hr/>
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
 <div style="flex: 1;">
   <h2>Laplace Technologies, Inc.</h2>
-  <p><strong>Backend Engineer</strong><br>2021.06 - </p>
+  <p><strong>Backend Engineer</strong><br/>2021.06 - </p>
 </div>
 
 <div style="flex: 3;">
   <h3>IOT 센서 데이터 파이프라인 구축</h3>
   
-  <p><strong>Description.</strong><br>
+  <p><strong>Description.</strong><br/>
   IOT 센서 클러스터들이 제공하는 다양한 데이터를 처리하는 ETL 파이프라인을 구축하였습니다.
   
   <p><strong>What did I do.</strong></p>
@@ -113,7 +115,23 @@
     <li>데이터를 전처리하고 Elastic search에 적재하는 서버 구현</li>
   </ul>
   
-  <p><strong>Tech Stack.</strong><br>Kafka, ElasticSearch, Go, MySQL, Docker</p>
+  <p><strong>Tech Stack.</strong><br/>Kafka, ElasticSearch, Go, MySQL, Docker</p>
 </div>
 
 </div>
+
+
+<br/><br/>
+
+# 🎒 Personal Experience
+
+## 숭실대학교
+
+**AI 융합학부생 (2017.03 ~ 2022.06)**
+- 평균 학점: 4.1/4.5
+
+**NCLab 학부 연구생 (2020.07 ~ 2021.06)**
+
+### 해군 1함대 사령부 정보통신 중대
+
+**전산 · 네트워크병 (2017.08 ~ 2019.06)**
