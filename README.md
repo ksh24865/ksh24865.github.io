@@ -13,6 +13,40 @@
 </div>
 
 <div style="flex: 3;">
+  <h3>대시보드 API 서버 구축</h3>
+  
+  <p><strong>Description.</strong><br/>
+  500개 이상의 커머스 BI 데이터 지표에 대해 분석 및 시각화 하는 대시보드 API 서버를 설계 및 구축 하였습니다.
+  </p>
+  
+  <p><strong>What did I do.</strong></p>
+  <ul>
+    <li>대시보드 설정 정보를 요청 받아 데이터를 집계하여 제공하는 서비스 구현</li>
+    <li>API 서버 및 분산 쿼리 시스템의 단위별 캐싱을 통해 대시보드 조회 성능 개선</li>
+    <li>대시보드를 커스텀하게 다룰 수 있도록 document 기반의 CRUD 기능 구현</li>
+  </ul>
+  
+  <p><strong>Tech Stack.</strong><br/>FastAPI, Trino, Redis, Kubernetes, Python</p>
+
+  <hr/>
+
+  <h3>알림 시스템 구축</h3>
+  
+  <p><strong>Description.</strong><br/>
+  일 평균 1300개 이상의 커머스 BI 리포트 및 CRM 메시지를 발송하는 알림 시스템을 구축 하였습니다. 
+  </p>
+  
+  <p><strong>What did I do.</strong></p>
+  <ul>
+    <li>메시지 큐를 이용한 이벤트 드리븐 기반의 알림 전송 시스템 구축</li>
+    <li>설정 정보를 통해 대시보드 API를 호출하고 리포트를 생성하는 서비스 구현</li>
+    <li>카카오 알림톡, 슬랙, 이메일 전송 서비스 구현</li>
+  </ul>
+  
+  <p><strong>Tech Stack.</strong><br/>AwsSQS, Airflow, FastAPI, MySQL, Redis, Kubernetes, Python</p>
+
+  <hr/>
+
   <h3>커머스 데이터 파이프라인 구축</h3>
   
   <p><strong>Description.</strong><br/>
@@ -31,23 +65,6 @@
   
   <hr/>
 
-  <h3>대시보드 API 서버 구축</h3>
-  
-  <p><strong>Description.</strong><br/>
-  500개 이상의 커머스 BI 데이터 지표에 대해 분석 및 시각화 하는 대시보드 API 서버를 설계 및 구축 하였습니다.
-  </p>
-  
-  <p><strong>What did I do.</strong></p>
-  <ul>
-    <li>대시보드 설정 정보를 요청 받아 데이터를 집계하여 제공하는 서비스 구현</li>
-    <li>API 서버 및 분산 쿼리 시스템의 단위별 캐싱을 통해 대시보드 조회 성능 개선</li>
-    <li>대시보드를 커스텀하게 다룰 수 있도록 document 기반의 CRUD 기능 구현</li>
-  </ul>
-  
-  <p><strong>Tech Stack.</strong><br/>FastAPI, Trino, Redis, Kubernetes, Python</p>
-
-  <hr/>
-
   <h3>서드파티 권한 인증 서버 구축</h3>
   
   <p><strong>Description.</strong><br/>
@@ -62,23 +79,6 @@
   </ul>
   
   <p><strong>Tech Stack.</strong><br/>FastAPI, MySQL, AwsSecretManager, Kubernetes, Python</p>
-
-  <hr/>
-
-  <h3>알림 시스템 구축</h3>
-  
-  <p><strong>Description.</strong><br/>
-  일 평균 1300개 이상의 커머스 BI 리포트 및 CRM 메시지를 발송하는 알림 시스템을 구축 하였습니다. 
-  </p>
-  
-  <p><strong>What did I do.</strong></p>
-  <ul>
-    <li>메시지 큐를 이용한 이벤트 드리븐 기반의 알림 전송 시스템 구축</li>
-    <li>설정 정보를 통해 대시보드 API를 호출하고 리포트를 생성하는 서비스 구현</li>
-    <li>카카오 알림톡, 슬랙, 이메일 전송 서비스 구현</li>
-  </ul>
-  
-  <p><strong>Tech Stack.</strong><br/>AwsSQS, Airflow, FastAPI, MySQL, Redis, Kubernetes, Python</p>
 
   <hr/>
 
@@ -104,8 +104,8 @@
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
 <div style="flex: 1;">
-  <h2>Laplace Technologies, Inc.</h2>
-  <p><strong>Backend Engineer</strong><br/>2021.06 - </p>
+  <h2>NC Lab <br> <span style="font-size: 15px; color: gray;"> 숭실대학교</h2>
+  <p><strong>학부 연구생</strong><br>2020.07 - 2021.06</p>
 </div>
 
 <div style="flex: 3;">
