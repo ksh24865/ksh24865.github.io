@@ -159,16 +159,22 @@
   <li>암호 저장을 위해 많은 비용이 지출됨</li>
       <ul><li>SecretManager의 비용은 암호 1개당 월 월 0.4$</li></ul>  
 </ul>
+</p>
+
 <p><strong>Solution.</strong><br/>
 <ul>
   <li>1급 비밀을 제외한 암호 정보를 대칭키 암호화 후 RDB로 이관</li>
   <li>대칭키를 SecretManager에 저장</li>
 </ul>
+</p>
+
 
 <p><strong>Results.</strong><br/>
 <ul>
   <li>보안성을 확보한 채로 SecretManager의 월 비용을 X$로 대폭 감소</li>
 </ul>
+</p>
+
 
 <hr/>
 
@@ -179,17 +185,23 @@
   <li>Airflow on Kubernetes를 사용 중이었는데, 이 때 불필요한 Task들이 다수의 Pod로 생성됨</li>
   <li>EC2 노드가 자주 확장되면서 불필요한 비용이 발생</li>
 </ul>
+</p>
+
 <p><strong>Solution.</strong><br/>
 <ul>
   <li>TBD</li>
   <li>TBD</li>
 </ul>
+</p>
+
 
 <p><strong>Results.</strong><br/>
 <ul>
   <li>EC2 비용을 약 20% 절감할 수 있었으며, Pod 배치가 보다 효율적으로 이루어져 리소스 사용률이 개선</li>
   <li>인프라 운영 비용을 절감하면서도 안정적인 서비스 운영을 유지하는 데 성공</li>
 </ul>
+</p>
+
 <hr/>
 
 <h3> 대시보드 API 리팩토링 </h3>
@@ -198,12 +210,16 @@
   <li>대시보드의 데이터 종류 및 분석 방법 마다 각기 다른 API로 구현되어있음</li>
   <li>일관성이 없어 코드의 가독성이 떨어지며, 유지보수 및 추가 개발이 어려움</li>
 </ul>
+</p>
+
 <p><strong>Solution.</strong><br/>
 <ul>
   <li>모든 대시보드 API가 공통화 될 수 있도록 리팩토링</li>
   <li>QueryLayer, DataLayer, DashboardLayer로 계층 및 인터페이스를 나눈 후 추상화 전략을 고도화</li>
   <li>데이터와 그 데이터를 제공하는 서버의 종류에 관계 없이 추상 메서드를 잘 Implement한 서비스를 생성하고, 요청에 따라 각 서비스들을 조립 및 재사용 해가며 실행할 수 있도록 구성</li>
 </ul>
+</p>
+
 
 <p><strong>Results.</strong><br/>
 <ul>
@@ -211,6 +227,8 @@
   <li>데이터 종류, 측정값, 분석단위, 필터, 분석방법 등의 설정값을 받아서 이에 맞는 집계 결과를 반환하는 커스텀 대시보드의 API로 활용</li>
   <li>추후에 `4분면 분석`, `ABC 분석` 등의 추가 기능이 요구 되었었지만, 하위의 공통 Layer만 수정하면 됐을 정도로 개발 용이성 확보</li>
 </ul>
+</p>
+
 <hr/>
 
 <h3> 데이터 정합성 보완 </h3>
@@ -220,16 +238,21 @@
   <li>커머스 플랫폼에서 제공하는 API 데이터에 오류가 존재함</li>
   <li>고객사들이 정확한 매출 지표를 확인할 수 없음</li>
 </ul>
+</p>
+
 <p><strong>Solution.</strong><br/>
 <ul>
   <li>1급 비밀을 제외한 암호 정보를 대칭키 암호화 후 RDB로 이관</li>
   <li>대칭키를 SecretManager에 저장</li>
 </ul>
+</p>
 
 <p><strong>Results.</strong><br/>
 <ul>
   <li>보안성을 확보한 채로 SecretManager의 월 비용을 X$로 대폭 감소</li>
 </ul>
+</p>
+
 <hr/>
 
 <h3> 대시보드 API 로딩 속도 개선 </h3>
@@ -238,16 +261,21 @@
   <li>모든 암호 정보를 AWS의 SecretManager에 저장하고 있음</li>
   <li>월 M$가 암호 저장 비용으로 지출 (SecretManager의 비용은 암호 1개당 월 월 0.4$)</li>
 </ul>
+</p>
+
 <p><strong>Solution.</strong><br/>
 <ul>
   <li>1급 비밀을 제외한 암호 정보를 대칭키 암호화 후 RDB로 이관</li>
   <li>대칭키를 SecretManager에 저장</li>
 </ul>
+</p>
+
 
 <p><strong>Results.</strong><br/>
 <ul>
   <li>보안성을 확보한 채로 SecretManager의 월 비용을 X$로 대폭 감소</li>
 </ul>
+</p>
 
 </div>
 
