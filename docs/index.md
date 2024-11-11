@@ -153,129 +153,110 @@
 
 <div style="flex: 3;">
 <h3> AWS Secret Manager 최적화 </h3>
-<p><strong>Problem.</strong><br/>
+<p><strong>Problem.</strong></p>
 <ul>
   <li>모든 암호 정보를 AWS 클라우드의 SecretManager에 저장하고 있음</li>
-  <li>월 1066$가 암호 저장 비용으로 지출</li>
-      <ul><li>SecretManager의 비용은 암호 1개당 월 월 0.4$</li></ul>  
+  <li>월 1066$가 암호 저장 비용으로 지출</li>  
 </ul>
-</p>
 
-<p><strong>Solution.</strong><br/>
+<p><strong>Solution.</strong></p>
 <ul>
   <li>1급 비밀을 제외한 암호 정보를 대칭키 암호화 후 RDB로 이관</li>
   <li>대칭키를 SecretManager에 저장</li>
 </ul>
-</p>
 
 
-<p><strong>Results.</strong><br/>
+<p><strong>Results.</strong></p>
 <ul>
   <li>보안성을 확보한 채로 SecretManager의 월 비용을 99% 이상 대폭 감소</li>
 </ul>
-</p>
 
 
 <hr/>
 
 <h3> AWS Elastic Kubernetes Service 최적화 </h3>
-<p><strong>Problem.</strong><br/>
+<p><strong>Problem.</strong></p>
 <ul>
-  <li>Kubernetes 클러스터에서 EKS와 EC2를 함께 사용하면서 Pod 수 증가에 따라 자동으로 EC2 노드가 스케일링 되고 있음</li>
-  <li>Airflow on Kubernetes를 사용 중이었는데, 이 때 불필요한 Task들이 다수의 Pod로 생성됨</li>
-  <li>EC2 노드가 자주 확장되면서 불필요한 비용이 발생</li>
+  <li>Kubernetes 클러스터에서 EKS와 EC2를 함께 사용하면서 Pod 수 증가에 따라 자동으로 EC2 노드가 스케일링 되고 있었음</li>
+  <li>Airflow on Kubernetes를 사용 중이었으며, 이 때 불필요한 Task들로 인해 다수의 Pod가 생성됨</li>
+  <li>EC2 노드의 스케일업이 빈번히 발생하여 불필요한 비용이 발생</li>
 </ul>
-</p>
 
-<p><strong>Solution.</strong><br/>
+<p><strong>Solution.</strong></p>
 <ul>
-  <li>TBD</li>
-  <li>TBD</li>
+  <li>작은 여러 task들을 하나로 합치거나, 불필요한 dynamic task mappning을 정리하는 등 Airflow의 task를 최적화하여 pod가 과도하게 생성되는 것을 방지</li>
+  <li>Karpenter를 도입하여 Kubernetes 클러스터의 리소스 사용률 변화에 대응하여 적절한 사양의 노드(EC2)를 신속하게 실행하고, 종료하여 애플리케이션 가용성과 클러스터 효율성을 개선할 수 있었음</li>
 </ul>
-</p>
 
 
-<p><strong>Results.</strong><br/>
+<p><strong>Results.</strong></p>
 <ul>
-  <li>EC2 비용을 약 20% 절감할 수 있었으며, Pod 배치가 보다 효율적으로 이루어져 리소스 사용률이 개선</li>
-  <li>인프라 운영 비용을 절감하면서도 안정적인 서비스 운영을 유지하는 데 성공</li>
+  <li>Pod 배치가 보다 효율적으로 이루어져 리소스 사용률이 개선</li>
+  <li>EC2 비용을 약 20% 절감할 수 있었음</li>
+  <li>서비스 운영에 타격을 주지 않고 인프라 운영 비용을 절감하는데 성공</li>
 </ul>
-</p>
 
 <hr/>
 
 <h3> 대시보드 API 리팩토링 </h3>
-<p><strong>Problem.</strong><br/>
+<p><strong>Problem.</strong></p>
 <ul>
   <li>대시보드의 데이터 종류 및 분석 방법 마다 각기 다른 API로 구현되어있음</li>
   <li>일관성이 없어 코드의 가독성이 떨어지며, 유지보수 및 추가 개발이 어려움</li>
+  <li>변경 소요가 너무 커서 고객의 신규 요구사항을 반영하는데 많은 시간이 걸림</li>
 </ul>
-</p>
 
-<p><strong>Solution.</strong><br/>
+<p><strong>Solution.</strong></p>
 <ul>
   <li>모든 대시보드 API가 공통화 될 수 있도록 리팩토링</li>
   <li>QueryLayer, DataLayer, DashboardLayer로 계층 및 인터페이스를 나눈 후 추상화 전략을 고도화</li>
   <li>데이터와 그 데이터를 제공하는 서버의 종류에 관계 없이 추상 메서드를 잘 Implement한 서비스를 생성하고, 요청에 따라 각 서비스들을 조립 및 재사용 해가며 실행할 수 있도록 구성</li>
 </ul>
-</p>
 
-
-<p><strong>Results.</strong><br/>
+<p><strong>Results.</strong></p>
 <ul>
   <li>각 layer의 관심사를 분리하고 의존도를 낮추어 유지보수 용이성이 향상</li>
   <li>데이터 종류, 측정값, 분석단위, 필터, 분석방법 등의 설정값을 받아서 이에 맞는 집계 결과를 반환하는 커스텀 대시보드의 API로 활용</li>
   <li>추후에 `4분면 분석`, `ABC 분석` 등의 추가 기능이 요구 되었었지만, 하위의 공통 Layer만 수정하면 됐을 정도로 개발 용이성 확보</li>
 </ul>
-</p>
-
-<hr/>
-
-<h3> 데이터 정합성 보완 </h3>
-<p><strong>Problem.</strong><br/>
-<ul>
-  <li>커머스 플랫폼 별로 매출 지표의 집계방식이 다름</li>
-  <li>커머스 플랫폼에서 제공하는 API 데이터에 오류가 존재함</li>
-  <li>고객사들이 정확한 매출 지표를 확인할 수 없음</li>
-</ul>
-</p>
-
-<p><strong>Solution.</strong><br/>
-<ul>
-  <li>1급 비밀을 제외한 암호 정보를 대칭키 암호화 후 RDB로 이관</li>
-  <li>대칭키를 SecretManager에 저장</li>
-</ul>
-</p>
-
-<p><strong>Results.</strong><br/>
-<ul>
-  <li>보안성을 확보한 채로 SecretManager의 월 비용을 X$로 대폭 감소</li>
-</ul>
-</p>
 
 <hr/>
 
 <h3> 대시보드 API 로딩 속도 개선 </h3>
-<p><strong>Problem.</strong><br/>
+<p><strong>Problem.</strong></p>
 <ul>
-  <li>모든 암호 정보를 AWS의 SecretManager에 저장하고 있음</li>
-  <li>월 1066$가 암호 저장 비용으로 지출 (SecretManager의 비용은 암호 1개당 월 월 0.4$)</li>
+  <li>대시보드 API 호출 시 데이터의 양이 많아 30초 이상의 시간이 소요되어 Timeout 발생</li>
+  <li>사용자의 활용 경험에 매우 큰 악영향을 주는 문제로 지적됨</li>
+  <li>단순히 분산 쿼리 엔진인 Trino의 스펙을 높여서 성능을 개선할 수는 있지만, 이는 클라우드 컴퓨팅 자원의 비용 상승으로 이어짐</li>
 </ul>
-</p>
 
-<p><strong>Solution.</strong><br/>
+<p><strong>Solution.</strong></p>
 <ul>
-  <li>1급 비밀을 제외한 암호 정보를 대칭키 암호화 후 RDB로 이관</li>
-  <li>대칭키를 SecretManager에 저장</li>
+  <li>계층 별 캐싱 전략 도입</li>
+  <ul>
+  <li>API 서버 캐싱</li>
+  <ul>
+  <li>Redis를 활용하여 요청 단위로 집계 결과를 캐시 하도록 설정</li>
+  <li>중복된 요청이 발생했을 때에도 캐싱된 결과를 반환하도록 설정하여, 쿼리 엔진으로 전달되는 쿼리량과, 분석 시간을 대폭 절감</li>
+  </ul>
+  <li>분산 쿼리 엔진 캐싱</li>
+  <ul>
+  <li>Trino가 S3 스토리지에서 읽어온 데이터를 로컬 스토리지에 캐시 하도록 설정</li>
+  <li>보통 동일한 데이터에 다양한 집계를 반복해서 수행하는 경향이 많은데, 이 때 S3에서 Trino로의 데이터 전송 비용 및 처리 시간을 대폭 절감</li>
+  </ul>
+  </ul>
+  <li>적절한 Cache Eviction</li>
+  <ul>
+  <li>사용자의 데이터가 업데이트 될 경우 이벤트가 발생하고, 이 이벤트의 핸들러에 관련 캐시를 모두 Eviction하도록 하여 데이터의 일관성 확보</li>
+  </ul>
 </ul>
-</p>
-
-
-<p><strong>Results.</strong><br/>
+<p><strong>Results.</strong></p>
 <ul>
-  <li>보안성을 확보한 채로 SecretManager의 월 비용을 99% 이상 대폭 감소</li>
+  <li>Trino로 전달되는 쿼리 요청 수가 크게 감소</li>
+  <li>대시보드 API의 평균 응답 속도를 5초 이내로 단축</li>
+  <li>사용자의 대시보드 활용 경험을 크게 개선</li>
+  <li>인프라 비용의 증가 없이 성능 최적화를 달성할 수 있었음</li>
 </ul>
-</p>
 
 </div>
 
