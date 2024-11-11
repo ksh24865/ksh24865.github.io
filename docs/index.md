@@ -156,7 +156,7 @@
 <p><strong>Problem.</strong><br/>
 <ul>
   <li>모든 암호 정보를 AWS 클라우드의 SecretManager에 저장하고 있음</li>
-  <li>암호 저장을 위해 많은 비용이 지출됨</li>
+  <li>월 1066$가 암호 저장 비용으로 지출</li>
       <ul><li>SecretManager의 비용은 암호 1개당 월 월 0.4$</li></ul>  
 </ul>
 </p>
@@ -171,7 +171,7 @@
 
 <p><strong>Results.</strong><br/>
 <ul>
-  <li>보안성을 확보한 채로 SecretManager의 월 비용을 X$로 대폭 감소</li>
+  <li>보안성을 확보한 채로 SecretManager의 월 비용을 99% 이상 대폭 감소</li>
 </ul>
 </p>
 
@@ -259,7 +259,7 @@
 <p><strong>Problem.</strong><br/>
 <ul>
   <li>모든 암호 정보를 AWS의 SecretManager에 저장하고 있음</li>
-  <li>월 M$가 암호 저장 비용으로 지출 (SecretManager의 비용은 암호 1개당 월 월 0.4$)</li>
+  <li>월 1066$가 암호 저장 비용으로 지출 (SecretManager의 비용은 암호 1개당 월 월 0.4$)</li>
 </ul>
 </p>
 
@@ -273,7 +273,7 @@
 
 <p><strong>Results.</strong><br/>
 <ul>
-  <li>보안성을 확보한 채로 SecretManager의 월 비용을 X$로 대폭 감소</li>
+  <li>보안성을 확보한 채로 SecretManager의 월 비용을 99% 이상 대폭 감소</li>
 </ul>
 </p>
 
