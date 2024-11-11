@@ -152,52 +152,6 @@
 </div>
 
 <div style="flex: 3;">
-<h3> AWS Secret Manager 최적화 </h3>
-<p><strong>Problem.</strong></p>
-<ul>
-  <li>모든 암호 정보를 AWS 클라우드의 SecretManager에 저장하고 있음</li>
-  <li>월 1066$가 암호 저장 비용으로 지출</li>  
-</ul>
-
-<p><strong>Solution.</strong></p>
-<ul>
-  <li>1급 비밀을 제외한 암호 정보를 대칭키 암호화 후 RDB로 이관</li>
-  <li>대칭키를 SecretManager에 저장</li>
-</ul>
-
-
-<p><strong>Results.</strong></p>
-<ul>
-  <li>보안성을 확보한 채로 SecretManager의 월 비용을 99% 이상 대폭 감소</li>
-</ul>
-
-
-<hr/>
-
-<h3> AWS Elastic Kubernetes Service 최적화 </h3>
-<p><strong>Problem.</strong></p>
-<ul>
-  <li>Kubernetes 클러스터에서 EKS와 EC2를 함께 사용하면서 Pod 수 증가에 따라 자동으로 EC2 노드가 스케일링 되고 있었음</li>
-  <li>Airflow on Kubernetes를 사용 중이었으며, 이 때 불필요한 Task들로 인해 다수의 Pod가 생성됨</li>
-  <li>EC2 노드의 스케일업이 빈번히 발생하여 불필요한 비용이 발생</li>
-</ul>
-
-<p><strong>Solution.</strong></p>
-<ul>
-  <li>작은 여러 task들을 하나로 합치거나, 불필요한 dynamic task mappning을 정리하는 등 Airflow의 task를 최적화하여 pod가 과도하게 생성되는 것을 방지</li>
-  <li>Karpenter를 도입하여 Kubernetes 클러스터의 리소스 사용률 변화에 대응하여 적절한 사양의 노드(EC2)를 신속하게 실행하고, 종료하여 애플리케이션 가용성과 클러스터 효율성을 개선할 수 있었음</li>
-</ul>
-
-
-<p><strong>Results.</strong></p>
-<ul>
-  <li>Pod 배치가 보다 효율적으로 이루어져 리소스 사용률이 개선</li>
-  <li>EC2 비용을 약 20% 절감할 수 있었음</li>
-  <li>서비스 운영에 타격을 주지 않고 인프라 운영 비용을 절감하는데 성공</li>
-</ul>
-
-<hr/>
-
 <h3> 대시보드 API 리팩토링 </h3>
 <p><strong>Problem.</strong></p>
 <ul>
@@ -262,6 +216,52 @@
   <li>사용자의 대시보드 활용 경험을 크게 개선</li>
   <li>인프라 비용의 증가 없이 성능 최적화를 달성할 수 있었음</li>
 </ul>
+
+<hr/>
+
+<h3> AWS Elastic Kubernetes Service 최적화 </h3>
+<p><strong>Problem.</strong></p>
+<ul>
+  <li>Kubernetes 클러스터에서 EKS와 EC2를 함께 사용하면서 Pod 수 증가에 따라 자동으로 EC2 노드가 스케일링 되고 있었음</li>
+  <li>Airflow on Kubernetes를 사용 중이었으며, 이 때 불필요한 Task들로 인해 다수의 Pod가 생성됨</li>
+  <li>EC2 노드의 스케일업이 빈번히 발생하여 불필요한 비용이 발생</li>
+</ul>
+
+<p><strong>Solution.</strong></p>
+<ul>
+  <li>작은 여러 task들을 하나로 합치거나, 불필요한 dynamic task mappning을 정리하는 등 Airflow의 task를 최적화하여 pod가 과도하게 생성되는 것을 방지</li>
+  <li>Karpenter를 도입하여 Kubernetes 클러스터의 리소스 사용률 변화에 대응하여 적절한 사양의 노드(EC2)를 신속하게 실행하고, 종료하여 애플리케이션 가용성과 클러스터 효율성을 개선할 수 있었음</li>
+</ul>
+
+
+<p><strong>Results.</strong></p>
+<ul>
+  <li>Pod 배치가 보다 효율적으로 이루어져 리소스 사용률이 개선</li>
+  <li>EC2 비용을 약 20% 절감할 수 있었음</li>
+  <li>서비스 운영에 타격을 주지 않고 인프라 운영 비용을 절감하는데 성공</li>
+</ul>
+
+<hr/>
+
+<h3> AWS Secret Manager 최적화 </h3>
+<p><strong>Problem.</strong></p>
+<ul>
+  <li>모든 암호 정보를 AWS 클라우드의 SecretManager에 저장하고 있음</li>
+  <li>월 1066$가 암호 저장 비용으로 지출</li>  
+</ul>
+
+<p><strong>Solution.</strong></p>
+<ul>
+  <li>1급 비밀을 제외한 암호 정보를 대칭키 암호화 후 RDB로 이관</li>
+  <li>대칭키를 SecretManager에 저장</li>
+</ul>
+
+
+<p><strong>Results.</strong></p>
+<ul>
+  <li>보안성을 확보한 채로 SecretManager의 월 비용을 99% 이상 대폭 감소</li>
+</ul>
+
 
 </div>
 
