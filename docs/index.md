@@ -153,14 +153,14 @@
 
 <div style="flex: 3;">
 <h3> 대시보드 API 리팩토링 </h3>
-<p><strong>Problem.</strong></p>
+<p><strong>Problems.</strong></p>
 <ul>
   <li>대시보드의 데이터 종류 및 분석 방법 마다 각기 다른 API로 구현되어있음</li>
   <li>일관성이 없어 코드의 가독성이 떨어지며, 유지보수 및 추가 개발이 어려움</li>
   <li>변경 소요가 너무 커서 고객의 신규 요구사항을 반영하는데 많은 시간이 걸림</li>
 </ul>
 
-<p><strong>Solution.</strong></p>
+<p><strong>Solutions.</strong></p>
 <ul>
   <li>모든 대시보드 API가 하나의 컴포넌트에서 관리될 수 있도록 리팩토링</li>
   <li>계층 및 인터페이스를 분리한 후 추상화 전략을 고도화</li>
@@ -182,14 +182,14 @@
 <hr/>
 
 <h3> 대시보드 API 로딩 속도 개선 </h3>
-<p><strong>Problem.</strong></p>
+<p><strong>Problems.</strong></p>
 <ul>
   <li>대시보드 API 호출 시 데이터의 양이 많아 30초 이상의 시간이 소요되어 Timeout 발생</li>
   <li>사용자의 활용 경험에 매우 큰 악영향을 주는 문제로 지적됨</li>
   <li>단순히 분산 쿼리 엔진인 Trino의 스펙을 높여서 성능을 개선할 수 있었지만, 이는 클라우드 컴퓨팅 자원의 비용 상승으로 이어짐</li>
 </ul>
 
-<p><strong>Solution.</strong></p>
+<p><strong>Solutions.</strong></p>
 <ul>
   <li>계층 별 캐싱 전략 도입</li>
   <ul>
@@ -200,19 +200,21 @@
   </ul>
   <li>분산 쿼리 엔진 캐싱</li>
   <ul>
+  <li>고객들이 생성한 대시보드 종류의 통계를 보았을 때 동일한 데이터에 다양한 집계를 설정한 여러가지 차트를 하나의 대시보드에 위치 시키는 경향을 확인</li>
   <li>Trino가 S3 스토리지에서 읽어온 데이터를 로컬 스토리지에 캐시하도록 설정</li>
-  <li>보통 동일한 데이터에 다양한 집계를 반복해서 수행하는 경향이 많은데, 이 때 S3에서 Trino로의 데이터 전송 비용 및 처리 시간을 대폭 절감</li>
+  <li>이로 인해 S3에서 Trino로의 데이터 전송 비용 및 처리 시간을 대폭 절감</li>
   </ul>
   </ul>
   <li>적절한 Cache Eviction</li>
   <ul>
-  <li>사용자의 데이터가 업데이트 될 경우 이벤트가 발생하고, 이 이벤트의 핸들러에 관련 캐시를 모두 Eviction하도록 하여 데이터의 일관성 확보</li>
+  <li>사용자의 데이터가 업데이트 될 경우 캐시된 데이터로 인해 데이터의 일관성에 문제가 생길 수 있음</li>
+  <li>사용자 데이터 업데이트 이벤트를 리스닝하는 핸들러에 해당 사용자의 업데이트된 데이터 관련 캐시를 모두 Eviction하도록 하여 데이터의 일관성 확보</li>
   </ul>
 </ul>
 <p><strong>Results.</strong></p>
 <ul>
-  <li>Trino로 전달되는 쿼리 요청 수가 크게 감소</li>
-  <li>대시보드 API의 평균 응답 속도를 5초 이내로 단축</li>
+  <li>Trino로 전달되는 쿼리 요청 수가 50% 이상 크게 감소</li>
+  <li>Grafana 확인 결과 대시보드 API의 평균 응답 속도를 5초 이내로 단축</li>
   <li>사용자의 대시보드 활용 경험을 크게 개선</li>
   <li>인프라 비용의 증가 없이 성능 최적화를 달성할 수 있었음</li>
 </ul>
@@ -220,37 +222,43 @@
 <hr/>
 
 <h3> AWS Elastic Kubernetes Service 최적화 </h3>
-<p><strong>Problem.</strong></p>
+<p><strong>Problems.</strong></p>
 <ul>
   <li>Kubernetes 클러스터에서 EKS와 EC2를 함께 사용하면서 Pod 수 증가에 따라 자동으로 EC2 노드가 스케일링 되고 있었음</li>
-  <li>Airflow on Kubernetes를 사용 중이었으며, 이 때 불필요한 Task들로 인해 다수의 Pod가 생성됨</li>
+  <li>Airflow on Kubernetes를 사용 중이었으며, 이 때 과도한 Task들로 인해 다수의 Pod가 생성됨</li>
   <li>EC2 노드의 스케일업이 빈번히 발생하여 불필요한 비용이 발생</li>
 </ul>
 
-<p><strong>Solution.</strong></p>
+<p><strong>Solutions.</strong></p>
 <ul>
-  <li>작은 여러 task들을 하나로 합치거나, 불필요한 dynamic task mappning을 정리하는 등 Airflow의 task를 최적화하여 pod가 과도하게 생성되는 것을 방지</li>
-  <li>Karpenter를 도입하여 Kubernetes 클러스터의 리소스 사용률 변화에 대응하여 적절한 사양의 노드(EC2)를 신속하게 실행하고, 종료하여 애플리케이션 가용성과 클러스터 효율성을 개선할 수 있었음</li>
+  <li>Grafana를 이용해 리소스 사용률을 확인한 결과 할당된 리소스 크기에 비해 CPU 사용량이 매우 낮은 다수의 tiny task들이 각각 pod로 생성되는 것이 잦은 스케일 업의 원인임을 확인</li>
+  <li>여러 tiny task들을 하나의 task 내에 chaining 시키거나, 불필요한 dynamic task mappning을 정리하는 등 Airflow의 task를 최적화하여 pod가 과도하게 생성되는 것을 방지</li>
+  <li>Task가 실행될 때 최소한의 리소스만 할당하도록 조정</li>
+  <li>Karpenter를 Kubernetes의 스케줄러로 도입</li>
+  <ul>
+    <li>Pod의 리소스 요구 사항과 노드의 리소스 사용률을 기반으로 노드를 동적으로 할당하여, 리소스 낭비를 줄이고 불필요한 노드 스케일링을 방지할 수 있었음</li>
+    <li>노드 리소스 사용률이 낮을 때 유휴 노드를 자동으로 축소하고, 반대로 리소스가 과부하될 때는 필요한 만큼만 노드를 확장하여 클러스터를 최적화</li>
+  </ul>
 </ul>
 
 
 <p><strong>Results.</strong></p>
 <ul>
-  <li>Pod 배치가 보다 효율적으로 이루어져 리소스 사용률이 개선</li>
-  <li>EC2 비용을 약 20% 절감할 수 있었음</li>
+  <li>Pod 배치가 보다 효율적으로 이루어져 리소스 사용률과 클러스터 효율성 개선</li>
+  <li>AWS billing report 확인 결과 EC2 비용을 약 20% 절감할 수 있었음</li>
   <li>서비스 운영에 타격을 주지 않고 인프라 운영 비용을 절감하는데 성공</li>
 </ul>
 
 <hr/>
 
 <h3> AWS Secret Manager 최적화 </h3>
-<p><strong>Problem.</strong></p>
+<p><strong>Problems.</strong></p>
 <ul>
   <li>모든 암호 정보를 AWS 클라우드의 SecretManager에 저장하고 있음</li>
   <li>월 1066$가 암호 저장 비용으로 지출</li>
 </ul>
 
-<p><strong>Solution.</strong></p>
+<p><strong>Solutions.</strong></p>
 <ul>
   <li>1급 비밀을 제외한 암호 정보를 대칭키 암호화 후 RDB로 이관</li>
   <li>대칭키를 SecretManager에 저장</li>
