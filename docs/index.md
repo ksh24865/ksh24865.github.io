@@ -3,7 +3,7 @@
 
 <br/><br/>
 
-<h1>💻 Work Experience</h1>
+<h1>💻 Career Summary</h1>
 
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
@@ -142,7 +142,7 @@
 
 <br/><br/>
 
-# Projects
+# Leading Projects
 
 
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
@@ -169,7 +169,12 @@
   <li>DataLayer: QueryInterface가 생성한 요청을 데이터 서버에 전달하여 결과 데이터 반환</li>
   <li>DashboardLayer: DataInterface가 반환한 데이터를 후집계 및 대시보드 규격에 맞추어 처리하고 최종 결과 반환</li>
 </ul>
-  <li>데이터의 종류와 데이터가 위치한 서버의 종류에 관계 없이 추상 메서드를 잘 Implement한 서비스를 생성하고, 요청에 따라 각 서비스들을 조립 및 재사용 해가며 실행할 수 있도록 구성</li>
+  <li>data_source, measure, dimension, filter, time_frequency 등을 전부 커스텀하게 요청 받아 이에 맞는 집계 데이터 반환 하도록 구성</li>
+  <ul> 
+    <li>추상 메서드를 잘 Implement한 서비스를 생성하고, 요청에 따라 각 서비스들을 조립 및 재사용 해가며 실행할 수 있도록 구성</li>
+    <li>사내 분산 쿼리 엔진(=Trino), 고객사의 BigQuery, GA4의 API 서버 등 각각 다른 서버에 위치한 데이터를 하나의 데이터 처럼 집계 요청 가능</li>
+    <li>디테일한 필터링을 지원할 수 있도록 필터의 형태를 Tree 구조로 구성</li>
+  </ul>
 </ul>
 
 <p><strong>Results.</strong></p>
@@ -200,7 +205,7 @@
   </ul>
   <li>분산 쿼리 엔진 캐싱</li>
   <ul>
-  <li>고객들이 생성한 대시보드 종류의 통계를 보았을 때 동일한 데이터에 다양한 집계를 설정한 여러가지 차트를 하나의 대시보드에 위치 시키는 경향을 확인</li>
+  <li>고객들이 생성한 대시보드 종류의 통계를 보았을 때 동일한 데이터 소스에 다양한 집계를 설정한 다수의 차트를 하나의 대시보드에 위치 시키는 경향을 확인</li>
   <li>Trino가 S3 스토리지에서 읽어온 데이터를 로컬 스토리지에 캐시하도록 설정</li>
   <li>이로 인해 S3에서 Trino로의 데이터 전송 비용 및 처리 시간을 대폭 절감</li>
   </ul>
@@ -231,8 +236,8 @@
 
 <p><strong>Solutions.</strong></p>
 <ul>
-  <li>Grafana를 이용해 리소스 사용률을 확인한 결과 할당된 리소스 크기에 비해 CPU 사용량이 매우 낮은 다수의 tiny task들이 각각 pod로 생성되는 것이 잦은 스케일 업의 원인임을 확인</li>
-  <li>여러 tiny task들을 하나의 task 내에 chaining 시키거나, 불필요한 dynamic task mappning을 정리하는 등 Airflow의 task를 최적화하여 pod가 과도하게 생성되는 것을 방지</li>
+  <li>Prometheus로 집계된 리소스 사용률을 Grafana를 이용해 확인한 결과 할당된 리소스 크기에 비해 CPU 사용량이 매우 낮은 다수의 tiny task들이 각각 pod로 생성되는 것이 잦은 스케일 업의 원인임을 확인</li>
+  <li>여러 tiny task들을 하나의 task로 chaining 시키거나, 불필요한 dynamic task mappning을 정리하는 등 Airflow의 task를 최적화하여 pod가 과도하게 생성되는 것을 방지</li>
   <li>Task가 실행될 때 최소한의 리소스만 할당하도록 조정</li>
   <li>Karpenter를 Kubernetes의 스케줄러로 도입</li>
   <ul>
@@ -251,25 +256,29 @@
 
 <hr/>
 
-<h3> AWS Secret Manager 최적화 </h3>
+<h3> 알림 시스템 설계 및 구축 </h3>
 <p><strong>Problems.</strong></p>
 <ul>
-  <li>모든 암호 정보를 AWS 클라우드의 SecretManager에 저장하고 있음</li>
-  <li>월 1066$가 암호 저장 비용으로 지출</li>
+  <li>문제작성(유저의 이벤트에 따른 안내 발송이 이벤트가 발생하는 쪽의 콜백으로 파편화, BI 리포트 알림 발송 기능의 필요, ...)</li>
 </ul>
 
 <p><strong>Solutions.</strong></p>
 <ul>
-  <li>1급 비밀을 제외한 암호 정보를 대칭키 암호화 후 RDB로 이관</li>
-  <li>대칭키를 SecretManager에 저장</li>
+  <li>시스템설계도 작성</li>
+  <li>이벤트 드리븐 시스템 설계 어필</li>
+  <ul>
+    <li>exactly once에 가깝기 위해 노력 어필</li>
+  </ul>
+  <li> 커스텀 리포트 기능 어필</li>
 </ul>
 
 
 <p><strong>Results.</strong></p>
 <ul>
-  <li>보안성을 확보한 채로 SecretManager의 월 비용을 99% 이상 대폭 감소</li>
-</ul>
+  <li>관심사 중앙화 어필</li>
+  <li></li>
 
+</ul>
 
 </div>
 
