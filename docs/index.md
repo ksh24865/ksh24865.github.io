@@ -272,7 +272,7 @@
   <li>이벤트 큐, 핸들러와 작업 큐, 핸들러를 구분하여 책임 및 관심사 분리</li>
   </ul>
 
-  ![](./event_driven.png)
+  ![](https://ksh24865.github.io/event_driven.png)
   
   <li>알림 시스템 구축</li>
   <ul>
@@ -280,7 +280,7 @@
   <li>스케줄된 시간에 알림 생성 및 전송</li>
   </ul>
 
-  ![](./noti_server.png)
+  ![](https://ksh24865.github.io/noti_server.png)
   <li>커스텀 리포트</li> 
   <ul>
     <li>알림 설정 테이블</li>
