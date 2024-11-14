@@ -43,7 +43,7 @@
     <li>카카오 알림톡, 슬랙, 이메일 전송 서비스 구현</li>
   </ul>
   
-  <p><strong>Tech Stack.</strong><br/>AwsSQS, Airflow, FastAPI, MySQL, Redis, Kubernetes, Python</p>
+  <p><strong>Tech Stack.</strong><br/>AwsSQS, Airflow, FastAPI, AwsLambda, MySQL, Redis, Kubernetes, Python</p>
 
   <hr/>
 
@@ -169,7 +169,7 @@
   <li>DataLayer: QueryInterface가 생성한 요청을 데이터 서버에 전달하여 결과 데이터 반환</li>
   <li>DashboardLayer: DataInterface가 반환한 데이터를 후집계 및 대시보드 규격에 맞추어 처리하고 최종 결과 반환</li>
 </ul>
-  <li>data_source, measure, dimension, filter, time_frequency 등을 전부 커스텀하게 요청 받아 이에 맞는 집계 데이터 반환 하도록 구성</li>
+  <li>data_source, measure, dimension, filter, time_frequency 등을 전부 커스텀하게 요청 받아 이에 맞는 집계 데이터를 반환 하도록 구성</li>
   <ul> 
     <li>추상 메서드를 잘 Implement한 서비스를 생성하고, 요청에 따라 각 서비스들을 조립 및 재사용 해가며 실행할 수 있도록 구성</li>
     <li>사내 분산 쿼리 엔진(=Trino), 고객사의 BigQuery, GA4의 API 서버 등 각각 다른 서버에 위치한 데이터를 하나의 데이터 처럼 집계 요청 가능</li>
@@ -250,7 +250,7 @@
 <p><strong>Results.</strong></p>
 <ul>
   <li>Pod 배치가 보다 효율적으로 이루어져 리소스 사용률과 클러스터 효율성 개선</li>
-  <li>AWS billing report 확인 결과 EC2 비용을 약 20% 절감할 수 있었음</li>
+  <li>billing report 확인 결과 EC2 비용을 약 20% 절감할 수 있었음</li>
   <li>서비스 운영에 타격을 주지 않고 인프라 운영 비용을 절감하는데 성공</li>
 </ul>
 
@@ -259,25 +259,61 @@
 <h3> 알림 시스템 설계 및 구축 </h3>
 <p><strong>Problems.</strong></p>
 <ul>
-  <li>문제작성(유저의 이벤트에 따른 안내 발송이 이벤트가 발생하는 쪽의 콜백으로 파편화, BI 리포트 알림 발송 기능의 필요, ...)</li>
+  <li>기존 알림 기능의 파편화</li>
+  <ul><li>각 task의 콜백으로 추가되고 있었음</li></ul>
+  <li>일별 BI 리포트 발송 기능 추가 요구</li>
 </ul>
 
 <p><strong>Solutions.</strong></p>
 <ul>
-  <li>시스템설계도 작성</li>
-  <li>이벤트 드리븐 시스템 설계 어필</li>
+  <li>이벤트 드리븐 시스템 도입</li>
   <ul>
-    <li>exactly once에 가깝기 위해 노력 어필</li>
+  <li>Tasks에서 생성한 각종 이벤트에 따른 작업들을 수행</li>
+  <li>이벤트 큐, 핸들러와 작업 큐, 핸들러를 구분하여 책임 및 관심사 분리</li>
   </ul>
-  <li> 커스텀 리포트 기능 어필</li>
+
+  ![](event_driven.png)
+  
+  <li>알림 시스템 구축</li>
+  <ul>
+  <li>전송 주기, content, 전송 대상 등의 설정을 기반으로 알림 스케줄</li>
+  <li>스케줄된 시간에 알림 생성 및 전송</li>
+  </ul>
+
+  ![](noti_server.png)
+  <li>커스텀 리포트</li> 
+  <ul>
+    <li>알림 설정 테이블</li>
+    <ul><li>사용자가 받고자 하는 알림의 설정 정보를 커스텀 하게 등록</li></ul>
+    <li>이벤트 핸들링 서버</li>
+    <ul><li>이벤트 큐에서 사용자의 일별 배치 작업 완료 이벤트를 읽어 핸들러 실행(알림 생성 command를 작업 큐에 produce)</li></ul>
+    <li>작업 서버</li>
+    <ul><li>작업 큐를 읽어 알림 설정 테이블의 정보를 기반으로 알림을 스케줄</li></ul>
+    <li>알림 서버</li>
+    <ul>
+    <li>알림 스케줄 테이블에서 스케줄 조건을 만족하는 row를 읽어 알림을 생성한 후 알림 전송 command를 작업 큐에 produce</li>
+    <li>알림 생성 시 설정한 content 정보를 기반으로 알림 서버에서 대시보드 서버에 집계요청 후 BI 리포트 생성</li>
+    </ul>
+    <li>작업 서버</li>
+    <ul><li>작업 큐로 부터 전달 받은 알림 내용을 목적지로 전송 </li></ul>
+  </ul>
+  <li>각종 큐는 AwsSQS로 구성</li>
+  <ul>
+    <li>서비스의 이벤트 발생량이 일 N개</li>
+    <li>최소 스펙의 Kafka 브로커 3대를 cloud 환경에서 운용할 경우 매월 약 600$의 비용 발생</li>
+    <li>실제 발생하는 이벤트량에 비해 오버스펙이라 판단했고, 합리적인 비용 지출을 위해 SQS로 선정</li>
+  </ul>
 </ul>
 
 
 <p><strong>Results.</strong></p>
 <ul>
-  <li>관심사 중앙화 어필</li>
-  <li></li>
-
+  <li>각종 이벤트 드리븐 기능의 개발 및 유지보수 용이성 확보</li>
+  <ul>
+  <li>이벤트 핸들러 추가, 커맨드 핸들러 추가 등의 간단한 작업 만으로 파편화 되어있던 다른 기능들도 간단하게 마이그레이션</li>
+  </ul>
+  <li>고객 대상 설문조사 결과, 유료 구독 전환을 결정하게 되는 주요 기능 중 하나로 자리 잡음</li>
+  <li>billing report 확인 결과 모든 메시지 큐의 월 비용 합계는 3$ 이내로, 최소한의 인프라 비용으로 정상 작동하는 시스템 구현 성공</li>
 </ul>
 
 </div>
