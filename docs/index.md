@@ -104,7 +104,7 @@
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
 <div style="flex: 1;">
-  <h2>NC Lab <br> <span style="font-size: 15px; color: gray;"> 숭실대학교 </span></h2>
+  <h2>Network Computing Lab <br> <span style="font-size: 15px; color: gray;"> 숭실대학교 </span></h2>
   <p><strong>학부 연구생</strong><br>2020.07 - 2021.06</p>
 </div>
 
@@ -134,7 +134,7 @@
 
 <p><strong>AI 융합학부생 (2017.03 ~ 2022.06)</strong></p>
 <p>- 평균 학점: 4.1/4.5</p>
-<p><strong>NCLab 학부 연구생 (2020.07 ~ 2021.06)</strong></p>
+<p><strong>Network Computing Lab 학부 연구생 (2020.07 ~ 2021.06)</strong></p>
 <hr/>
 
 <h3> 해군 1함대 사령부 정보통신 중대 </h3>
@@ -179,7 +179,7 @@
 
 <p><strong>Results.</strong></p>
 <ul>
-  <li>각 layer의 관심사를 분리하고 의존도를 낮추어 유지보수 용이성이 향상</li>
+  <li>각 layer의 관심사를 분리하고 의존도를 낮추어 유지보수 용이성 향상</li>
   <li>데이터 종류, 측정값, 분석단위, 필터, 분석방법 등의 커스텀한 설정값을 받아서 이에 맞는 집계 결과를 반환하는 커스텀 대시보드의 API로 활용</li>
   <li>추후에 `4분면 분석`, `ABC 분석` 등의 추가 기능이 요구되었지만, 하위의 공통 Layer만 수정하면 됐을 정도로 개발 용이성 및 고객 만족도 확보</li>
 </ul>
