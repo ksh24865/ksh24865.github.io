@@ -59,7 +59,7 @@
   <p><strong>What did I do.</strong></p>
   <ul>
     <li>Airflow를 이용해 파이프라인 스케줄링 Dag 개발</li>
-    <li>Spark 및 Trino 최적화를 통해 처리 성능 향상(대략 20%이상의 데이터 처리 비용 절감)</li>
+    <li>Spark 및 Trino 최적화를 통해 처리 성능 향상(대략 <strong>20%</strong>이상의 데이터 처리 비용 절감)</li>
     <li>데이터 품질 및 쿼리 성능 향상을 위한 데이터 웨어하우스 구축</li>
   </ul>
   
@@ -220,7 +220,7 @@
 </ul>
 <p><strong>Results.</strong></p>
 <ul>
-  <li>Trino로 전달되는 쿼리 요청 수가 50% 이상 크게 감소</li>
+  <li>Trino로 전달되는 쿼리 요청 수가 <strong>50%</strong> 이상 크게 감소</li>
   <li>Grafana 확인 결과 대시보드 API의 평균 응답 속도를 5초 이내로 단축</li>
   <li>사용자의 대시보드 활용 경험을 크게 개선</li>
   <li>인프라 비용의 증가 없이 성능 최적화를 달성할 수 있었음</li>
@@ -252,7 +252,7 @@
 <p><strong>Results.</strong></p>
 <ul>
   <li>Pod 배치가 보다 효율적으로 이루어져 리소스 사용률과 클러스터 효율성 개선</li>
-  <li>billing report 확인 결과 EC2 비용을 약 20% 절감할 수 있었음</li>
+  <li>billing report 확인 결과 EC2 비용을 약 <strong>20%</strong> 절감할 수 있었음</li>
   <li>서비스 운영에 타격을 주지 않고 인프라 운영 비용을 절감하는데 성공</li>
 </ul>
 
@@ -300,7 +300,7 @@
   </ul>
   <li>각종 큐는 AwsSQS로 구성</li>
   <ul>
-    <li>최소 스펙의 Kafka 브로커 3대를 cloud 환경에서 운용할 경우 매월 약 600$의 비용 발생</li>
+    <li>최소 스펙의 Kafka 브로커 3대를 cloud 환경에서 운용할 경우 매월 약 <strong>600$</strong>의 비용 발생</li>
     <li>실제 발생하는 이벤트량에 비해 오버스펙이라 판단했고, 합리적인 비용 지출을 위해 SQS로 선정</li>
   </ul>
 </ul>
@@ -312,7 +312,7 @@
   <ul>
   <li>이벤트 핸들러 추가, 커맨드 핸들러 추가 등의 간단한 작업 만으로 파편화 되어있던 다른 기능들도 간단하게 마이그레이션</li>
   </ul>
-  <li>billing report 확인 결과 모든 메시지 큐의 월 비용 합계는 3$ 이내로, 최소한의 인프라 비용으로 정상 작동하는 시스템 구현 성공</li>
+  <li>billing report 확인 결과 모든 메시지 큐의 월 비용 합계는 <strong>3$</strong> 이내로, 최소한의 인프라 비용으로 정상 작동하는 시스템 구현 성공</li>
 </ul>
 
 </div>
