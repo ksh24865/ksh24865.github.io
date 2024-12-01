@@ -34,7 +34,8 @@
   
   <hr/>
 
-  <h3>커머스 데이터 웨어하우스 구축</h3><p><strong>Description.</strong><br/>
+  <h3>커머스 데이터 웨어하우스 구축</h3>
+  <p><strong>Description.</strong><br/>
   <br/>
   매출, 광고비 등 커머스 데이터의 품질 및 정합성을 유지하면서 효율적으로 처리 및 관리되는 데이터 웨어하우스/마트 구축  
   </p>
@@ -49,9 +50,9 @@
   
   <p><strong>Tech Stack.</strong><br/>Airflow, Spark, Trino, Hive, Iceberg, Deltalake, AwsS3, Kubernetes, Python, Java</p>
 
-  </ul>
   
   <hr/>
+
   <h3>대시보드 API 서버 구축</h3>
   
   <p><strong>Description.</strong><br/>
