@@ -48,7 +48,7 @@
     <li>Trino UDF 개발</li>
   </ul>
   
-  <p><strong>Tech Stack.</strong><br/>Airflow, Spark, Trino, Hive, Iceberg, Deltalake, AwsS3, Kubernetes, Python, Java</p>
+  <p><strong>Tech Stack.</strong><br/>Airflow, pySpark, Trino, Hive, Iceberg, Deltalake, AwsS3, Kubernetes, Python, Java</p>
 
   
   <hr/>
