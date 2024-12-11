@@ -37,7 +37,7 @@
     </ul>
     <li>Spark, Trino 기반의 분산 데이터 처리 파이프라인 최적화</li>
     <ul>
-        <li>Spark에 Dynamic Resource Allocation를 도입하여 OOME, Idle Executor 이슈를 최적화 및 <strong>클러스터 운영 비용 20% 감소</strong> </li>
+        <li>Spark에 Dynamic Resource Allocation를 도입하여 OOME, Idle Executor 이슈 최적화 및 <strong>클러스터 운영 비용 20% 감소</strong> </li>
         <li>Trino에 File System Cache를 도입하여 <strong>트래픽 비용 및 평균 처리 시간 40% 감소</strong> </li>
     </ul>
 
