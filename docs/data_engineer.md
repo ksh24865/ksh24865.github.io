@@ -43,7 +43,7 @@
 
   </ul>
   
-  <p><strong>Tech Stack.</strong><br/>Airflow, AirByte, pySpark, Trino, Iceberg, Deltalake, AwsS3, Kubernetes, Python</p>
+  <p><strong>Tech Stack.</strong><br/>Airflow, AirByte, pySpark, Trino(=Presto), Iceberg, Deltalake, AwsS3, Kubernetes, Python</p>
   
   <hr/>
 
@@ -133,8 +133,11 @@
 
 <br/>
 
-<h1> 🎒 Others </h1>
+<h1> 🎒 Personal Experience </h1>
+<h3> 토스 Learner's High 서버 1기 </h3>
+<p><strong>멘티 (2024.12 ~ )</strong></p>
 
+<hr/>
 <h3> 숭실대학교 </h3>
 
 <p><strong>AI 융합학부생 (2017.03 ~ 2022.06)</strong></p>
