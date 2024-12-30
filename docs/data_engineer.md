@@ -57,7 +57,7 @@
   <ul>
     <li>SQL 기반 데이터 모델 관리</li>
     <li>롤업 최적화를 통해 row 개수를 11,280,372,312 -> 106,713,784로 <strong>최대 99% 감소</strong></li>
-    <li>time_id 기반 파티셔닝 최적화를 통해 <strong>쿼리 속도 30% 향상</strong></li>
+    <li>파티셔닝 및 버케팅 최적화를 통해 <strong>쿼리 속도 최대 60% 향상</strong></li>
     <li>Trino UDF 개발</li>
   </ul>
   
