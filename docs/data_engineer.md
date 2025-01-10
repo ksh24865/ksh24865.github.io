@@ -29,7 +29,10 @@
   <p><strong>What did I do.</strong></p>
   <ul>
     <li>Airflow를 이용한 ETL 파이프라인 Dag 개발</li>
-    <li>데이터 수집 시 버퍼링 및 압축 후 데이터 레이크에 저장하도록 마이그레이션</li>
+    <ul>
+        <li>Redis 기반의 체크 포인팅을 통해 task의 failure에 대한 안정성 확보</li>
+    </ul>
+    <li>수집 데이터 버퍼링 및 압축 기능 개발</li>
     <ul>
         <li>Raw 데이터의 총 <strong>용량 92.5% 감소</strong></li>
         <li>반정형 데이터 <strong>Parsing 효율 91% 증가</strong> </li>
@@ -49,7 +52,7 @@
   <h3>데이터 웨어하우스 구축</h3>
   <p><strong>Description.</strong><br/>
   <br/>
-  정합성에 민감한 금액 관련 데이터의 품질을 유지하면서  효율적으로 처리 및 관리되는 데이터 웨어하우스/마트 구축
+  정합성에 민감한 금액 관련 데이터의 품질을 유지하면서 효율적으로 처리 및 관리되는 데이터 웨어하우스/마트 구축
   </p>
   
   <p><strong>What did I do.</strong></p>
@@ -75,9 +78,18 @@
   <ul>
     <li>커스텀한 대시보드 설정 정보를 요청 받아 데이터를 집계하여 제공하는 서비스 구현</li>
     <ul>
-        <li>각 layer의 관심사를 분리하고 의존도를 낮추어 유지보수 용이성 향상</li>
+        <li>SQL Alchemy 기반 Trino 쿼리 빌더 구현</li>
     </ul>
-    <li>API 서버 및 분산 데이터 처리 시스템의 단위별 캐싱을 통해 대시보드 <strong>조회 성능을 80% 개선</strong></li>
+    <li>API 서버 및 분산 데이터 처리 시스템의 단위별 캐싱을 통해 대시보드 <strong>조회 성능을 80% 개선</strong></li>    
+    <li>분석 기능 개발</li>
+    <ul>
+        <li>period-over-period 분석</li>
+        <li>리텐션, 코호트 분석</li>
+        <li>4분면 분석</li>
+        <li>ABC 분석</li>
+        <li>지역 분석</li>
+    </ul>
+    
   </ul>
   
   <p><strong>Tech Stack.</strong><br/>FastAPI, Trino, Redis, Kubernetes, Python</p>
