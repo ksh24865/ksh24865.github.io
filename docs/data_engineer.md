@@ -32,7 +32,7 @@
     <ul>
         <li>Redis 기반의 체크 포인팅을 통해 task의 failure에 대한 안정성 확보</li>
     </ul>
-    <li>수집 데이터 버퍼링 및 압축 기능 개발</li>
+    <li>데이터 수집 Task에 버퍼링 및 압축 기능 추가</li>
     <ul>
         <li>Raw 데이터의 총 <strong>용량 92.5% 감소</strong></li>
         <li>반정형 데이터 <strong>Parsing 효율 91% 증가</strong> </li>
@@ -40,6 +40,7 @@
     <li>Spark, Trino 기반의 분산 데이터 처리 파이프라인 최적화</li>
     <ul>
         <li>Spark에 Dynamic Resource Allocation를 도입하여 OOME, Idle Executor 이슈 최적화 및 <strong>클러스터 운영 비용 20% 감소</strong> </li>
+        <li>Trino 기반 데이터 처리 파이프라인을 도입하여 기존 <strong>spark 대비 70%의 처리 비용 절약</strong></li>
         <li>Trino에 File System Cache를 도입하여 <strong>트래픽 비용 및 평균 처리 시간 40% 감소</strong> </li>
     </ul>
 
