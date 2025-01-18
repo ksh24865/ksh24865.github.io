@@ -147,7 +147,7 @@
 
 <h1> 🎒 Personal Experience </h1>
 <h3> 토스 Learner's High 서버 1기 </h3>
-<p><strong>멘티 (2024.12 ~ )</strong></p>
+<p><strong>멘티 (2024.12 ~ 2025.01)</strong></p>
 
 <hr/>
 <h3> 숭실대학교 </h3>
