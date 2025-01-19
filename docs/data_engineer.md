@@ -28,9 +28,10 @@
   
   <p><strong>What did I do.</strong></p>
   <ul>
-    <li>Airflow를 이용한 ETL 파이프라인 Dag 개발</li>
+    <li>Airflow를 이용한 ETL 파이프라인 Dag 구축</li>
     <ul>
-        <li>Redis 기반의 체크 포인팅을 통해 task의 failure에 대한 안정성 확보</li>
+        <li>dynamic dag generation을 통한 파이프라인 생성 자동화</li>
+        <li>Redis 기반의 체크 포인팅을 통해 task의 failure & retry 에 대한 안정성 확보</li>
     </ul>
     <li>데이터 수집 Task에 버퍼링 및 압축 기능 추가</li>
     <ul>
@@ -40,7 +41,7 @@
     <li>Spark, Trino 기반의 분산 데이터 처리 파이프라인 최적화</li>
     <ul>
         <li>Spark에 Dynamic Resource Allocation를 도입하여 OOME, Idle Executor 이슈 최적화 및 <strong>클러스터 운영 비용 20% 감소</strong> </li>
-        <li>Trino 기반 데이터 처리 파이프라인을 도입하여 기존 <strong>spark 대비 70%의 처리 비용 절약</strong></li>
+        <li>Trino 기반 데이터 처리 파이프라인을 도입하여 기존 Spark 대비 <strong>처리 비용 70% 절약, 평균 파이프라인 실행 시간 75% 단축</strong></li>
         <li>Trino에 File System Cache를 도입하여 <strong>트래픽 비용 및 평균 처리 시간 40% 감소</strong> </li>
     </ul>
 
@@ -58,7 +59,7 @@
   
   <p><strong>What did I do.</strong></p>
   <ul>
-    <li>SQL 기반 데이터 모델 관리</li>
+    <li>데이터 모델링, 계층화</li>
     <li>롤업 최적화를 통해 row 개수를 1,111,265,510,342,250 -> 127,199,157로 <strong>최대 99% 감소</strong></li>
     <li>파티셔닝 및 버케팅 최적화를 통해 <strong>쿼리 속도 최대 60% 향상</strong></li>
     <li>Trino UDF 개발</li>
@@ -105,8 +106,12 @@
   
   <p><strong>What did I do.</strong></p>
   <ul>
-    <li>GitAction, ArgoCD 기반의 CI-CD 파이프라인 구축</li>
+    <li>GitHub Actions, ArgoCD 기반의 CI-CD 파이프라인 구축</li>
     <li>PagerDuty를 통해 API 서버와 1만개 이상의 Airflow task의 Failure를 모니터링</li>
+    <ul>
+    <li>PagerDuty incident deduplication key와 airflow task retry 최적화를 통해 self-healing system 을 구축 하여, 배치 작업의 <strong>오류 알림율을 97% 감소</strong></li>
+    <li>온콜 엔지니어의 피로도를 완화하여 incident 발생 시 즉각 대응이 가능한 구조 설계</li>
+    </ul>
   </ul>
   
   <p><strong>Tech Stack.</strong><br/>GitAction, ArgoCD, Helm, Kubernetes, PagerDuty</p>
