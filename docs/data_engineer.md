@@ -8,7 +8,7 @@
 
 <br/>
 
-<h1>💻 Career Summary</h1>   
+<h1>💻 Work Experience</h1>   
 
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
@@ -60,12 +60,13 @@
   <p><strong>What did I do.</strong></p>
   <ul>
     <li>데이터 모델링, 계층화</li>
+    <li>Great Expectations 기반의 테이블 정합성 검증 자동화</li>
     <li>롤업 최적화를 통해 row 개수를 1,111,265,510,342,250 -> 127,199,157로 <strong>최대 99% 감소</strong></li>
-    <li>파티셔닝 및 버케팅 최적화를 통해 <strong>쿼리 속도 최대 60% 향상</strong></li>
+    <li>파티셔닝 및 버케팅 기반의 DW 최적화를 통해 <strong>쿼리 속도 최대 60% 향상</strong></li>
     <li>Trino UDF 개발</li>
   </ul>
   
-  <p><strong>Tech Stack.</strong><br/>Trino, Hive, Iceberg, Deltalake, AwsS3, Kubernetes, Python, Java</p>
+  <p><strong>Tech Stack.</strong><br/>Trino, Hive, Iceberg, Deltalake, AwsS3, GreatExpectations, Kubernetes, Python, Java</p>
 
   
   <hr/>
@@ -91,7 +92,6 @@
         <li>ABC 분석</li>
         <li>지역 분석</li>
     </ul>
-    
   </ul>
   
   <p><strong>Tech Stack.</strong><br/>FastAPI, Trino, Redis, Kubernetes, Python</p>
@@ -110,7 +110,6 @@
     <li>PagerDuty를 통해 API 서버와 1만개 이상의 Airflow task의 Failure를 모니터링</li>
     <ul>
     <li>PagerDuty incident deduplication key와 airflow task retry 최적화를 통해 self-healing system 을 구축 하여, 배치 작업의 <strong>오류 알림율을 97% 감소</strong></li>
-    <li>온콜 엔지니어의 피로도를 완화하여 incident 발생 시 즉각 대응이 가능한 구조 설계</li>
     </ul>
   </ul>
   
@@ -151,15 +150,67 @@
 <br/>
 
 <h1> 🎒 Personal Experience </h1>
-<h3> 토스 Learner's High 서버 1기 </h3>
-<p><strong>멘티 (2024.12 ~ 2025.01)</strong></p>
 
+<div style="display: flex; align-items: flex-start; gap: 2rem;">
+
+<div style="flex: 1;">
+  <h2>토스 Learner's High 서버 1기 <br> <span style="font-size: 15px; color: gray;"> toss </span></h2>
+  <p><strong>멘티</strong><br>2024.12 - 2025.01</p>
+</div>
+
+<div style="flex: 3;">
+  <h3>대시보드 API </h3>
+  
+  <p><strong>Description.</strong><br/>
+  토스에서 지향하는 서버 개발자의 성장 방향성을 바탕으로 본인의 업무 목표를 설정 하고 실제 업무에 적용
+  </p>
+
+  <p><strong>What did I do.</strong></p>
+  <ul>
+    <li>DW 정합성 장애 감지 자동화</li>
+    <ul>
+      <li>Great Expectations, PagerDuty 기반의 테이블 정합성 검증 및 Incident 알림 자동화를 적용 하여 데이터 품질 관리 용이성 향상</li>
+    </ul>
+    <li>대시보드 서버 성능 최적화</li>
+    <ul>
+      <li>Modin 기반의 Parallelism 최적화를 적용하여 <strong>실행 시간 60% 감소</strong></li>
+    </ul>
+  </ul>
+  
+</div>
+</div>
+
+<hr/>
+
+<div style="display: flex; align-items: flex-start; gap: 2rem;">
+
+<div style="flex: 1;">
+  <h2>Network Computing Lab <br> <span style="font-size: 15px; color: gray;"> 숭실대학교 </span></h2>
+  <p><strong>학부 연구생</strong><br>2020.07 - 2021.06</p>
+</div>
+
+<div style="flex: 3;">
+  <h3>IOT 센서 데이터 파이프라인 구축</h3>
+  
+  <p><strong>Description.</strong><br/>
+  IOT 센서 클러스터들이 제공하는 다양한 데이터를 처리하는 ETL 파이프라인 구축
+  </p>
+
+  <p><strong>What did I do.</strong></p>
+  <ul>
+    <li>센서 데이터 스트리밍 Kafka 세팅</li>
+    <li>데이터를 전처리하고 ElasticSearch, MySQL에 적재하는 서버 구현</li>
+    <li>센서 클러스터 헬스 체크 서버 구현</li>
+  </ul>
+  
+  <p><strong>Tech Stack.</strong><br/>Kafka, ElasticSearch, Go, MySQL, Docker</p>
+</div>
+</div>
 <hr/>
 <h3> 숭실대학교 </h3>
 
 <p><strong>AI 융합학부생 (2017.03 ~ 2022.06)</strong></p>
 <p>- 평균 학점: 4.1/4.5</p>
-<p><strong>Network Computing Lab 학부 연구생 (2020.07 ~ 2021.06)</strong></p>
 <hr/>
 
 <h3> 해군 1함대 사령부 정보통신 중대 </h3>
