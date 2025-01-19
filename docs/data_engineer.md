@@ -154,7 +154,7 @@
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
 <div style="flex: 1;">
-  <h2>토스 Learner's High 서버 1기 <br> <span style="font-size: 15px; color: gray;"> toss </span></h2>
+  <h2>토스 Learner's High<br>서버 1기 <br> <span style="font-size: 15px; color: gray;"> toss </span></h2>
   <p><strong>멘티</strong><br>2024.12 - 2025.01</p>
 </div>
 
