@@ -121,32 +121,6 @@
 
 <hr/>
 
-<div style="display: flex; align-items: flex-start; gap: 2rem;">
-
-<div style="flex: 1;">
-  <h2>Network Computing Lab <br> <span style="font-size: 15px; color: gray;"> 숭실대학교 </span></h2>
-  <p><strong>학부 연구생</strong><br>2020.07 - 2021.06</p>
-</div>
-
-<div style="flex: 3;">
-  <h3>IOT 센서 데이터 파이프라인 구축</h3>
-  
-  <p><strong>Description.</strong><br/>
-  IOT 센서 클러스터들이 제공하는 다양한 데이터를 처리하는 ETL 파이프라인 구축
-  </p>
-
-  <p><strong>What did I do.</strong></p>
-  <ul>
-    <li>센서 데이터 스트리밍 Kafka 세팅</li>
-    <li>데이터를 전처리하고 ElasticSearch, MySQL에 적재하는 서버 구현</li>
-    <li>센서 클러스터 헬스 체크 서버 구현</li>
-  </ul>
-  
-  <p><strong>Tech Stack.</strong><br/>Kafka, ElasticSearch, Go, MySQL, Docker</p>
-</div>
-
-</div>
-
 <br/>
 
 <h1> 🎒 Personal Experience </h1>
@@ -215,3 +189,4 @@
 
 <h3> 해군 1함대 사령부 정보통신 중대 </h3>
 <p><strong>전산 · 네트워크병 (2017.08 ~ 2019.06)</strong></p>
+<hr/>
