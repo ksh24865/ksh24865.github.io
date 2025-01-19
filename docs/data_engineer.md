@@ -143,7 +143,7 @@
   <ul>
     <li>DW 정합성 장애 감지 자동화</li>
     <ul>
-      <li>Great Expectations, PagerDuty 기반의 테이블 정합성 검증 및 Incident 알림 자동화를 적용 하여 데이터 품질 관리 용이성 향상</li>
+      <li>Great Expectations, PagerDuty 기반의 테이블 정합성 검증 및 Incident 알림 자동화를 적용하여 데이터 품질 관리 용이성 향상</li>
     </ul>
     <li>대시보드 서버 성능 최적화</li>
     <ul>
