@@ -109,7 +109,7 @@
     <li>GitHub Actions, ArgoCD 기반의 CI-CD 파이프라인 구축</li>
     <li>PagerDuty를 통해 API 서버와 1만개 이상의 Airflow task의 Failure를 모니터링</li>
     <ul>
-    <li>PagerDuty incident deduplication key와 airflow task retry 최적화를 통해 self-healing system 을 구축 하여, 배치 작업의 <strong>오류 알림율을 97% 감소</strong></li>
+    <li>PagerDuty incident deduplication key와 airflow task retry 최적화를 통해 self-healing system 을 구축하여, 배치 작업의 <strong>오류 알림율을 97% 감소</strong></li>
     </ul>
   </ul>
   
@@ -136,7 +136,7 @@
   <h3>대시보드 API </h3>
   
   <p><strong>Description.</strong><br/>
-  토스에서 지향하는 서버 개발자의 성장 방향성을 바탕으로 본인의 업무 목표를 설정 하고 실제 업무에 적용
+  토스에서 지향하는 서버 개발자의 성장 방향성을 바탕으로 본인의 업무 목표를 설정하고 실제 업무에 적용
   </p>
 
   <p><strong>What did I do.</strong></p>
