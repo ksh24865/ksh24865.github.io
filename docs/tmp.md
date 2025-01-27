@@ -125,37 +125,6 @@
 
 <h1> 🎒 Personal Experience </h1>
 
-<div style="display: flex; align-items: flex-start; gap: 2rem;">
-
-<div style="flex: 1;">
-  <h2>토스 Learner's High<br>서버 1기 <br> <span style="font-size: 15px; color: gray;"> toss </span></h2>
-  <p><strong>멘티</strong><br>2024.12 - 2025.01</p>
-</div>
-
-<div style="flex: 3;">
-  <h3>DW 및 대시보드 서버 개선</h3>
-  
-  <p><strong>Description.</strong><br/>
-  토스에서 지향하는 서버 개발자의 성장 방향성을 바탕으로 본인의 업무 목표를 설정하고 실제 업무에 적용
-  </p>
-
-  <p><strong>What did I do.</strong></p>
-  <ul>
-    <li>DW 정합성 장애 감지 자동화</li>
-    <ul>
-      <li>Great Expectations와 Airflow를 활용하여 DW 테이블의 다양한 정합성 검증 로직 자동화</li>
-      <li>PagerDuty와 연동하여 정합성 문제 발생 시 자동으로 Incident를 생성하여 데이터 품질 관리의 용이성 및 신뢰성 증대</li>
-    </ul>
-    <li>대시보드 서버 성능 최적화</li>
-    <ul>
-      <li>Modin 기반의 Parallelism 최적화를 적용하여 <strong>처리 시간 60% 감소</strong></li>
-    </ul>
-  </ul>
-  
-</div>
-</div>
-
-<hr/>
 
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
