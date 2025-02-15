@@ -84,7 +84,7 @@
     <ul>
         <li>SQL Alchemy 기반 Trino 쿼리 빌더 구현</li>
     </ul>
-    <li>API 서버 및 분산 데이터 처리 시스템의 단위별 캐싱을 통해 대시보드 <strong>조회 성능을 80% 개선</strong></li>    
+    <li>API 서버 및 분산 데이터 처리 시스템의 단위별 캐싱을 통해 대시보드 <strong>조회 성능을 80% 개선</strong></li>
     <li>분석 기능 개발</li>
     <ul>
         <li>period-over-period 분석</li>
@@ -146,10 +146,6 @@
     <ul>
       <li>Great Expectations와 Airflow를 활용하여 DW 테이블의 다양한 정합성 검증 로직 자동화</li>
       <li>PagerDuty와 연동하여 정합성 문제 발생 시 자동으로 Incident를 생성하여 데이터 품질 관리의 용이성 및 신뢰성 증대</li>
-    </ul>
-    <li>대시보드 서버 성능 최적화</li>
-    <ul>
-      <li>Modin 기반의 Parallelism 최적화를 적용하여 <strong>처리 시간 60% 감소</strong></li>
     </ul>
   </ul>
   
