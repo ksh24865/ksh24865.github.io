@@ -22,15 +22,16 @@
   
   <p><strong>Description.</strong><br/>
   <br/>
-  쇼핑몰, 광고 플랫폼, 웹로그 등의 커머스 관련 데이터를 수집 및 처리하는 ETL 파이프라인을 구축
+  쇼핑몰, 광고 플랫폼, 웹로그 등의 커머스 관련 데이터를 수집 및 처리하는 ELT 파이프라인을 구축
 
   </p>
   
   <p><strong>What did I do.</strong></p>
   <ul>
-    <li>Airflow를 이용한 ETL 파이프라인 Dag 구축</li>
+    <li>Airflow를 이용한 ELT 파이프라인 Dag 구축</li>
     <ul>
         <li>dynamic dag generation을 통한 파이프라인 생성 자동화</li>
+        <li>deferrable sensor를 도입하여 센싱 시 스케줄러 자원이 낭비되는 이슈 해소</li>
         <li>Redis 기반의 체크 포인팅을 통해 task의 failure & retry 에 대한 안정성 확보</li>
     </ul>
     <li>데이터 수집 Task에 버퍼링 및 압축 기능 추가</li>
