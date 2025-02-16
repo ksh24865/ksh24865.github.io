@@ -134,19 +134,15 @@
 </div>
 
 <div style="flex: 3;">
-  <h3>DW 및 대시보드 서버 개선</h3>
-  
+  <h3>DW 정합성 장애 감지 자동화</h3>
   <p><strong>Description.</strong><br/>
   토스에서 지향하는 서버 개발자의 성장 방향성을 바탕으로 본인의 업무 목표를 설정하고 실제 업무에 적용
   </p>
 
   <p><strong>What did I do.</strong></p>
   <ul>
-    <li>DW 정합성 장애 감지 자동화</li>
-    <ul>
       <li>Great Expectations와 Airflow를 활용하여 DW 테이블의 다양한 정합성 검증 로직 자동화</li>
-      <li>PagerDuty와 연동하여 정합성 문제 발생 시 자동으로 Incident를 생성하여 데이터 품질 관리의 용이성 및 신뢰성 증대</li>
-    </ul>
+      <li>PagerDuty와 연동하여 정합성 문제 발생 시 자동으로 Incident를 생성, 데이터 품질 관리의 용이성 및 신뢰성 증대</li>
   </ul>
   
 </div>
