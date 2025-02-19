@@ -4,12 +4,12 @@
 
 <p>데이터 엔지니어 김성호 입니다. <br/>
 스타트업의 핵심 인력으로 <strong>2400%의 매출 성장</strong> 달성 경험이 있습니다. <br/>
-클라우드 기반 시스템에서 개발해 왔으며 ELT 파이프라인, 데이터 웨어하우스, 대시보드 API 서버 등 데이터 플랫폼의 설계부터 운영까지 A to Z를 주도적으로 개발해본 경험을 갖고 있습니다.
+클라우드 기반 시스템에서 개발해 왔으며 ELT 파이프라인, 데이터 웨어하우스, 대시보드 API 서버 등 데이터 플랫폼의 A to Z를 설계부터 운영까지 주도적으로 개발해본 경험을 갖고 있습니다.
 </p>
 
 <br/>
 
-<h1>💻 Work Experience</h1>   
+<h1>💻 Work Experience</h1>
 
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
 
