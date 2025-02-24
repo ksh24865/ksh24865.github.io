@@ -32,7 +32,7 @@
     <li>Airflow를 이용한 ELT 파이프라인 Dag 구축</li>
     <ul>
         <li>dynamic dag generation을 통한 파이프라인 생성 자동화</li>
-        <li>deferrable sensor를 도입하여 센싱 시 스케줄러 자원이 낭비되는 이슈 해소</li>
+        <li>deferrable sensor를 도입하여 센싱 시 스케줄러 부하 해소</li>
         <li>Redis 기반의 체크 포인팅을 통해 task의 failure & retry 에 대한 안정성 확보</li>
     </ul>
     <li>데이터 수집 Task에 버퍼링 및 압축 기능 추가</li>
@@ -63,7 +63,7 @@
   <ul>
     <li>데이터 모델링, 계층화</li>
     <li>Great Expectations 기반의 테이블 정합성 검증 자동화</li>
-    <li>롤업 최적화를 통해 row 개수를 1,111,265,510,342,250 -> 127,199,157로 <strong>최대 99% 감소</strong></li>
+    <li>롤업 최적화를 통해 row 개수를 25,510,342,250 -> 127,199,157로 <strong>99% 이상 감소</strong></li>
     <li>파티셔닝 및 버케팅 기반의 DW 최적화를 통해 <strong>쿼리 속도 최대 60% 향상</strong></li>
     <li>Trino UDF 개발</li>
   </ul>
