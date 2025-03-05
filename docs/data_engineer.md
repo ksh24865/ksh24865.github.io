@@ -35,6 +35,7 @@
         <li>deferrable sensor를 도입하여 센싱 시 스케줄러 부하 해소</li>
         <li>Redis 기반의 체크 포인팅을 통해 task의 failure & retry 에 대한 안정성 확보</li>
     </ul>
+    <li>커머스 플랫폼 데이터 수집 SDK 개발</li>
     <li>데이터 수집 Task에 버퍼링 및 압축 기능 추가</li>
     <ul>
         <li>Raw 데이터의 총 <strong>용량 92.5% 감소</strong></li>
