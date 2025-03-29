@@ -4,7 +4,7 @@
 
 <p>데이터 엔지니어 김성호 입니다. <br/>
 스타트업의 핵심 인력으로 <strong>2400%의 매출 성장</strong> 달성 경험이 있습니다. <br/>
-클라우드 기반 시스템에서 개발해 왔으며 ELT 파이프라인, 데이터 웨어하우스, 대시보드 API 서버 등 데이터 플랫폼의 A to Z를 설계부터 운영까지 주도적으로 개발해본 경험을 갖고 있습니다.
+클라우드 기반 시스템에서 개발해 왔으며 ELT 파이프라인, 데이터 웨어하우스, 대시보드 API 서버 등 데이터 플랫폼의 A to Z를 설계부터 운영까지 주도적으로 진행한 경험을 갖고 있습니다.
 </p>
 
 <br/>
@@ -33,13 +33,12 @@
     <ul>
         <li>dynamic dag generation을 통한 파이프라인 생성 자동화</li>
         <li>deferrable sensor를 도입하여 센싱 시 스케줄러 부하 해소</li>
-        <li>Redis 기반의 체크 포인팅을 통해 task의 failure & retry 에 대한 안정성 확보</li>
+        <li>Redis 기반의 체크 포인팅을 통해 수집 task의 failure & retry 에 대한 안정성 확보</li>
     </ul>
     <li>커머스 플랫폼 데이터 수집 SDK 개발</li>
     <li>데이터 수집 Task에 버퍼링 및 압축 기능 추가</li>
     <ul>
-        <li>Raw 데이터의 총 <strong>용량 92.5% 감소</strong></li>
-        <li>반정형 데이터 <strong>Parsing 효율 91% 증가</strong> </li>
+        <li>반정형 데이터 <strong>Parsing 효율 91% 증가</strong> 및 Raw 데이터의 총 <strong>용량 92.5% 감소</strong></li>
     </ul>
     <li>Spark, Trino 기반의 분산 데이터 처리 파이프라인 최적화</li>
     <ul>
@@ -84,16 +83,12 @@
   <ul>
     <li>커스텀한 대시보드 설정 정보를 요청 받아 데이터를 집계하여 제공하는 서비스 구현</li>
     <ul>
-        <li>SQL Alchemy 기반 Trino 쿼리 빌더 구현</li>
+        <li>Expression Tree 형태의 설정 정보를 SQL Alchemy 쿼리로 변경하는 쿼리 빌더 구현</li>
     </ul>
     <li>API 서버 및 분산 데이터 처리 시스템의 단위별 캐싱을 통해 대시보드 <strong>조회 성능을 80% 개선</strong></li>
     <li>분석 기능 개발</li>
     <ul>
-        <li>period-over-period 분석</li>
-        <li>리텐션, 코호트 분석</li>
-        <li>4분면 분석</li>
-        <li>ABC 분석</li>
-        <li>지역 분석</li>
+        <li>코호트, 리텐션, 퍼널, period-over-period, 4분면, ABC 분석 등</li>
     </ul>
   </ul>
   
