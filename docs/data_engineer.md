@@ -120,7 +120,35 @@
 <hr/>
 
 <br/>
+<h1> 🛠️ Open Source Contribution </h1>
 
+<div style="display: flex; align-items: flex-start; gap: 2rem;">
+
+<div style="flex: 1;">
+  <h2>Apache Airflow</h2>
+  <p>2025.04</p>
+</div>
+
+<div style="flex: 3;">
+  <h3> Variable.set 메서드 개선 (#48547)</h3>
+  <p><strong>Description.</strong><br/>
+  Airflow의 Variable.set 메서드에서 발생할 수 있는 Unique Constraint 오류 및 비효율적인 트랜잭션 문제 해소
+  </p>
+
+  <p><strong>What did I do.</strong></p>
+  <ul>
+      <li>기존 delete-insert 방식의 구조적 한계를 파악하고 리포팅</li>
+      <ul>
+        <li>동시성 및 반복 호출이 많은 상황에 취약하며, UNIQUE constraint 에러 유발</li>
+        <li>호출 시 마다 불필요한 쓰기 연산 및 트랜잭션 오버헤드 발생</li>
+      </ul>
+      <li>insert-or-update 방식으로 리팩토링하여 문제를 해소하고 단일 트랜잭션으로 안정적인 동작 구현</li>
+  </ul>
+  
+</div>
+</div>
+
+<hr/>
 <h1> 🎒 Personal Experience </h1>
 
 <div style="display: flex; align-items: flex-start; gap: 2rem;">
