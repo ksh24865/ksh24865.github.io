@@ -143,7 +143,7 @@ Kubernetes와 클라우드 기반 시스템에서 개발해 왔으며 ELT 파이
         <li>동시성 및 반복 호출이 많은 상황에 취약하며, UNIQUE constraint 에러 유발</li>
         <li>호출 시 마다 불필요한 쓰기 연산 및 트랜잭션 오버헤드 발생</li>
       </ul>
-      <li>단일 트랜잭션을 수행하는 insert-or-update 방식으로 리팩토링하여 <strong>안정성과 효울성 모두 개선</strong></li>
+      <li>단일 트랜잭션으로 수행되는 insert-or-update 방식으로 리팩토링하여 <strong>안정성과 성능을 모두 개선</strong></li>
   </ul>
   
 </div>
